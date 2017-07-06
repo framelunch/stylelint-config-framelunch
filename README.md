@@ -1,4 +1,4 @@
-# FRAME LUNCH ESlint config
+# FRAME LUNCH stylelint config
 
 フレームランチのstylelint設定(基本)
 
@@ -7,7 +7,10 @@
 ### インストール
 
 ```bash
-yarn add -D git+https://github.com/framelunch/stylelint-config-framelunch
+# use newest version
+yarn add -D framelunch/stylelint-config-framelunch
+# use target version
+yarn add -D framelunch/stylelint-config-framelunch#v0.1.0
 ```
 
 ### .stylelintrc
