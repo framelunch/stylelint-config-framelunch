@@ -10,7 +10,7 @@
 # use newest version
 yarn add -D framelunch/stylelint-config-framelunch
 # use target version
-yarn add -D framelunch/stylelint-config-framelunch#v0.1.0
+yarn add -D framelunch/stylelint-config-framelunch#v0.2.0
 ```
 
 ### .stylelintrc

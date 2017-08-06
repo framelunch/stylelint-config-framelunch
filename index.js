@@ -4,6 +4,15 @@ module.exports = {
     'node_modules/**/*'
   ],
   rules: {
+    /*
+     * Manual
+     */
+    // コメント記号とコメント本文の間にスペースを共用する 無効化 IntelliJと相性が悪い
+    'comment-whitespace-inside': null,
+
+    /*
+     * ECSS basic rules
+     */
     'block-no-empty': true,
     'color-no-invalid-hex': true,
     'declaration-colon-space-after': 'always',
@@ -22,13 +31,13 @@ module.exports = {
     'block-closing-brace-newline-before': 'always',
     'declaration-block-trailing-semicolon': 'always',
     'selector-list-comma-newline-after': 'always-multi-line',
-    'selector-no-id': true,
+    'selector-max-id': 0,
     'string-quotes': 'double',
     'value-no-vendor-prefix': true,
     'function-linear-gradient-no-nonstandard-direction': true,
-    'selector-no-universal': true,
+    'selector-max-universal': 0,
     'declaration-block-no-shorthand-property-overrides': true,
-    'indentation': 4,
+    indentation: 4,
     'selector-max-specificity': '0,2,0'
   }
 };
