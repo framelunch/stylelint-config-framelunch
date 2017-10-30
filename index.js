@@ -5,17 +5,15 @@ module.exports = {
   ],
   rules: {
     /*
-     * Manual
-     */
-    // コメント記号とコメント本文の間にスペースを共用する 無効化 IntelliJと相性が悪い
-    'comment-whitespace-inside': null,
-
-    /*
      * ECSS basic rules
      */
+    // 空のブロックを禁止
     'block-no-empty': true,
+    // 不正なhexを禁止
     'color-no-invalid-hex': true,
+    // コロンのあとにはスペース
     'declaration-colon-space-after': 'always',
+    // コロンの前にはスペースなし
     'declaration-colon-space-before': 'never',
     'function-comma-space-after': 'always',
     'function-url-quotes': 'always',
@@ -38,6 +36,28 @@ module.exports = {
     'selector-max-universal': 0,
     'declaration-block-no-shorthand-property-overrides': true,
     indentation: 4,
-    'selector-max-specificity': '0,2,0'
+    'selector-max-specificity': '0,2,0',
+
+    /*
+     * Manual
+     */
+    // コメント記号とコメント本文の間にスペースを共用する 無効化 IntelliJと相性が悪い
+    'comment-whitespace-inside': null,
+    // @なにがしで意味不明なものを無効化 mixin関係を通す
+    'at-rule-no-unknown': [true, { ignoreAtRules: ['mixin', 'define-mixin'] }],
+    // @の前に空行を強制 いくつかのルールは例外
+    'at-rule-empty-line-before': [
+      'always',
+      {
+        except: [
+          'blockless-after-same-name-blockless',
+          'first-nested',
+          'inside-block'
+        ],
+        ignore: [
+          'after-comment'
+        ]
+      }
+    ]
   }
 };
