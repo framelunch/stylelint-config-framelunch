@@ -9,7 +9,7 @@
     "test": "stylelint --config index.js 'test/*.css'"
   },
   "dependencies": {
-    "stylelint": "^8.0.0",
-    "stylelint-config-standard": "^17.0.0"
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0"
   }
 }

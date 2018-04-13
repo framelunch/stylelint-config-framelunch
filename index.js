@@ -46,18 +46,28 @@ module.exports = {
     // @なにがしで意味不明なものを無効化 mixin関係を通す
     'at-rule-no-unknown': [true, { ignoreAtRules: ['mixin', 'define-mixin'] }],
     // @の前に空行を強制 いくつかのルールは例外
-    'at-rule-empty-line-before': [
-      'always',
-      {
-        except: [
-          'blockless-after-same-name-blockless',
-          'first-nested',
-          'inside-block'
-        ],
+    'at-rule-empty-line-before': ['always', {
+        except: ['first-nested'],
         ignore: [
-          'after-comment'
+            'after-comment',
+            'blockless-after-same-name-blockless'
         ]
-      }
-    ]
+    }],
+    // セレクタの詳細度がややこしくならないように制限をかける
+    'selector-max-specificity': ['0,2,0', {
+        ignoreSelectors: [
+            // 擬似クラスは通す
+            '/:.*/',
+            // -XXX など、-はじまりのBEMのMを想定したクラスは通す
+            '/-[^-].*/',
+            // input:checked + label などのフォーム装飾系でよく使うものは通す
+            '/ \\+ /'
+        ]
+    }],
+    // コメントの前に改行を共用 例外もあり
+    'comment-empty-line-before': ['always', {
+        except: ['first-nested'],
+        ignore: ['after-comment', 'stylelint-commands']
+    }],
   }
 };
